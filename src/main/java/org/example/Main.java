@@ -17,7 +17,7 @@ public class Main {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
                 //swap
-                int temp = nums[j];
+                int temp = nums[j];git add 
                 nums[j] = nums[j + 1];
                 nums[j + 1] = temp;
             }
@@ -26,16 +26,28 @@ public class Main {
     }
 
     public static void selectionSort(int[] nums) {
-        for ( int i = 0 ;i<nums.length -1 ; i++) {
+        for (int i = 0; i < nums.length - 1; i++) {
             int minidx = 1;
-            for ( int j = i +1; i < nums.length ; j++) {
-                if( nums[j] < nums[minidx]) {
+            for (int j = i + 1; i < nums.length; j++) {
+                if (nums[j] < nums[minidx]) {
                     minidx = j;
                 }
             }
             int temp = nums[i];
             nums[i] = nums[minidx];
-            nums[minidx] = temp ;
+            nums[minidx] = temp;
+        }
+    }
+
+    public static void insertionSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int key = nums[i];
+            int j = i - 1;
+            while (j >= 0 && nums[j] > key) {
+                nums[j + 1] = nums[j];
+                j--;
+            }
+            nums[j + 1] = key;
         }
     }
 }
